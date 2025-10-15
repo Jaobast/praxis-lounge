@@ -130,3 +130,11 @@
 .menu:hover .point div, .sub-menu-container:hover .point div{
     background-color: var(--secondary);
 }
+
+.friends.border img{
+    border: 3px solid var(--online);
+}
+
+.friends.border div span{
+    color: var(--online);
+}

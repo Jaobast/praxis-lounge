@@ -1,0 +1,42 @@
+@font-face { font-family: 'poppins'; src: url(assets/fonts/Poppins-Regular.ttf);}
+@font-face { font-family: 'poppins-bold'; src: url(assets/fonts/Poppins-Bold.ttf);}
+@font-face { font-family: 'candal'; src: url(assets/fonts/Candal-Regular.ttf);}
+
+:root{
+    --primary: #464FF9;
+    --secondary: #EA77D1;
+    --accent: #A8ACFF;
+    --dark: #040751;
+    --light: #E7E8FF;
+}
+
+*{ padding: 0; margin: 0; box-sizing: border-box;
+   font-family: 'poppins';
+}
+
+body{height: 100svh; overflow: hidden;
+color: var(--dark);}
+
+button{ cursor: pointer;}
+
+.button{
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none; border-radius: 8px;
+    font-family: 'poppins-bold';
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.button:hover{
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
+::-webkit-scrollbar{display: none;}
+
+img.dot{ width: 12px!important;}
+
+img{background-size: cover; background-position: center; background-repeat: no-repeat; object-fit: cover;}

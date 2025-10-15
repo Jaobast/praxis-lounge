@@ -1,0 +1,84 @@
+.rs{
+    height: 100svh;
+    color: var(--light);
+    position: relative;
+    overflow-y: scroll;
+    padding: 0 25px;
+}
+
+.rs-profile{
+    padding-top: 60px;
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+}
+
+.rs-profile img{
+    width: 110px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.rs-profile h3, .rs-profile p{
+    color: var(--light);
+}
+
+.rs-profile h3{
+    font-size: 18px;
+    display: flex; gap: 5px;
+    align-items: center; justify-content: center;
+    margin: 5px 0px;
+}
+
+.rs-profile p{
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.rs hr{
+    border-color: var(--primary);
+    margin: 15px 0;
+}
+
+.rs-media p{
+    font-size: 20px;
+    margin-top: 30px;
+    opacity: 0.5;
+}
+
+.rs-media div{
+    margin-top: 20px;
+    max-height: 40svh;
+    border-radius: 4px;
+    overflow-y: scroll;
+    display: grid; gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.rs-media div img{
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.rs-media div img:hover{
+    opacity: 1;
+}
+
+.rs button{
+    position: absolute;
+    bottom: 25px; left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dark); color: var(--accent);
+    border: none; border-radius: 20px;
+    font-size: 12px; font-family: 'poppins-bold';
+    text-transform: uppercase;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.rs button:hover{
+    background-color: var(--secondary); color: var(--light);
+}

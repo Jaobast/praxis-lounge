@@ -1,0 +1,64 @@
+.profile{
+    min-height: 100vh;
+    background: url(/background.png) no-repeat;
+    background-size: cover; background-position: center;
+    display: flex;
+    align-content: center; justify-content: center;
+}
+
+.profile-container{
+    background: var(--light);
+    display: flex; flex-direction: row-reverse;
+    align-items: center; justify-content: space-between;
+    width: 700px; height: fit-content;
+    border-radius: 32px;
+    margin: auto;
+}
+
+.profile .profile-pic{
+    width: 200px;
+    margin: 20px auto;
+}
+
+.profile .profile-pic.border{
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 6px solid var(--primary);
+    background-color: var(--primary);
+}
+
+.profile form{
+    display: flex; flex-direction: column; gap: 20px;
+    padding: 40px;
+}
+
+.profile form h3{ text-transform: uppercase;}
+
+.profile label{
+    display: flex; gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile label img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.profile input, textarea{
+    padding: 10px;
+    min-width: 300px;
+    border: none;
+    border-radius: 8px;
+}
+
+.profile input:focus, textarea:focus{
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.profile form button{
+    border: none;
+}

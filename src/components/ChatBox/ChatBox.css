@@ -1,0 +1,131 @@
+.chat-box{
+    height: calc(100svh - 50px);
+    position: relative;
+    background-color: var(--light);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 25px 0 0;
+}
+
+.chat-user{
+    padding: 20px 20px 10px;
+    display: flex; gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid var(--accent);
+}
+
+.chat-user img{
+    width: 24px;
+    border-radius: 50%;
+}
+
+.chat-user .profile-img{
+    width: 36px;
+    aspect-ratio: 1/1;
+}
+
+.chat-user p{
+    flex: 1;
+    font-size: 20px;
+    color: var(--dark);
+    display: flex; gap: 5px;
+    align-items: center;
+}
+
+.chat-input{
+    display: flex; gap: 12px;
+    align-items: center;
+    padding: 15px 20px 15px 30px;
+    background: white;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+}
+
+.chat-input .input-text{
+    background: white;
+    font-size: 14px;
+}
+
+.chat-input .input-text::placeholder{
+    color: var(--dark);
+    opacity: 0.5;
+}
+
+.chat-input label{display: flex; cursor: pointer;}
+
+.chat-box svg{
+    width: 30px; height: 30px;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.chat-input label:hover svg, .chat-box .send-button:hover{
+    color: var(--primary);
+}
+
+.chat-input input{ 
+    flex:1;
+    border: none;
+    outline: none;
+}
+
+
+.chat-msg{
+    height: calc(100% - 70px);
+    padding-bottom: 70px;
+    overflow-y: scroll;
+    display: flex; flex-direction: column-reverse;
+}
+
+.s-msg div p, .r-msg div p{
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.s-msg div img, .r-msg div img{
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.s-msg, .r-msg{
+    display: flex; gap: 15px;
+    align-items: end; justify-content: end;
+    padding: 0 20px;
+}
+
+.r-msg{
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+.msg{
+    color: var(--light);
+    background-color: var(--primary);
+    padding: 12px 16px;
+    max-width: 50%;
+    font-size: 14px;
+    border-radius: 16px 16px 0 16px;
+    margin-bottom: 30px;
+}
+
+.r-msg .msg{ border-radius: 16px 16px 16px 0; background-color: var(--dark);}
+
+.msg-img{
+    max-width: 50%;
+    margin-bottom: 30px;
+    border-radius: 16px;
+
+}
+
+.chat-welcome{
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+
+.chat-welcome img{
+    width: 400px;
+    cursor: default;
+}

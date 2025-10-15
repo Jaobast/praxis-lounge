@@ -1,0 +1,90 @@
+.login{
+    min-height: 100vh;
+    background: url(/background.png) no-repeat;
+    background-size: cover; background-position: center;
+
+    display: flex;
+    align-items: center; justify-content: space-between;
+    padding: 0 10vw;
+}
+
+.login .logo{ width: max(30vw, 200px);}
+
+.login-form{
+    background-color: var(--light);
+    padding: 40px 40px 80px;
+    border-radius: 24px;
+    
+    display: flex; flex-direction: column; gap: 20px;
+}
+
+.login-form h2{
+    font-family: 'candal';
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.form-input{
+    padding: 8px 10px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    background-color: var(--light);
+}
+.form-input::placeholder{
+    color: var(--primary);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.login-term{
+    display: flex; gap: 5px;
+    align-items: center;
+    font-size: 11px;
+    color: #808080;
+}
+
+.login-term input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px; height: 15px;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 8px;
+}
+
+.login-term input[type="checkbox"]:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.login-term input[type="checkbox"]:checked::after {
+  color: var(--light);
+}
+
+.login-term input, .login-term label, .login-toggle span{cursor: pointer;}
+
+.login-forgot{
+    display: flex; flex-direction: column; gap: 5px;
+}
+
+.login-toggle{
+    font-size: 13px;
+    color: #5c5c5c;
+}
+
+.login-toggle span{
+    font-family: 'poppins-bold';
+    color: var(--primary);
+}
+
+.login-toggle span:hover{
+    color: var(--secondary);
+}
+

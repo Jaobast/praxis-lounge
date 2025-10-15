@@ -1,0 +1,132 @@
+.ls{
+    color: var(--light);
+    height: 100svh;
+    min-width: 0;
+    padding: 25px;
+}
+
+.ls-top{ padding: 10px 0 40px;}
+
+.ls-nav{
+    display: flex;
+    justify-content: space-between; align-items: center;
+}
+
+.ls-nav .logo{max-width: 120px;}
+
+.ls-nav .menu .point{ 
+    display: flex; flex-direction: column; gap: 2px;
+    cursor: pointer;
+}
+
+.ls-nav .menu .point:hover div{ 
+    background-color: var(--secondary);
+}
+
+.ls-nav .menu .point div {
+  width: 5px; height: 5px;
+  background-color: var(--accent);
+  border-radius: 50%;
+}
+
+.ls-search{
+    background-color: var(--accent);
+    border-radius: 8px;
+    display: flex; gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+    margin-top: 20px;
+}
+
+.ls-search img{ width: 16px;}
+
+.ls-search label{cursor: text;}
+
+.ls-search input{
+    background: transparent; color: var(--dark);
+    border: none; outline: none;
+    font-size: 12px;
+}
+
+.ls-search input::placeholder{color: var(--dark); opacity: 0.5;}
+
+.ls-list{
+    display: flex; flex-direction: column;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+.friends{
+    display: flex; gap: 20px;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.friends:hover{
+    background-color: var(--primary);
+}
+
+.friends div {display: flex; flex-direction: column;}
+
+.friends img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.friends p, .friends span{
+    color: var(--light);
+}
+
+.friends span{
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+.ls-nav .menu{
+    position: relative;
+    padding: 10px 0px;
+}
+
+.menu .sub-menu-container{
+    position: absolute;
+    top: calc(100% - 50px); right: 0%;
+    width: 150px;
+    display: none;
+    padding-top: 50px;
+    z-index: 1;
+}
+
+.menu .sub-menu{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.sub-menu hr{
+    border: none;
+    height: 1px;
+    background-color: var(--accent);
+    margin: 8px 0;
+}
+
+.sub-menu p{
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.sub-menu p:hover{
+    color: var(--primary);
+}
+
+.menu:hover .sub-menu-container, .sub-menu-container:hover{
+    display: block;
+}
+
+.menu:hover .point div, .sub-menu-container:hover .point div{
+    background-color: var(--secondary);
+}

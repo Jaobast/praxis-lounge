@@ -110,6 +110,7 @@
     }
 
     .login {
+        height: 100dvh;
         background: url(/background-only.png) no-repeat;
         background-size: cover;
         background-position: center;

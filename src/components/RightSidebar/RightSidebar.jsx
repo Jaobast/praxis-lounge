@@ -2,34 +2,54 @@ import React from "react";
 import './RightSidebar.css'
 import assets from "../../assets/assets";
 import { logout } from "../../config/firebase";
+import { useContext } from "react";
+import {AppContext} from '../../context/AppContext'
+import { useEffect } from "react";
+import { useState } from "react";
 
 const RightSidebar = () =>{
-    return(
+
+    const {chatUser, messages} = useContext(AppContext);
+    const [msgImages,setMsgImages] = useState([]);
+    useEffect(()=>{
+        let tempVar = [];
+        messages.map((msg)=>{
+            if (msg.image) {
+                tempVar.push(msg.image)
+            }
+        })
+        setMsgImages(tempVar);
+        
+    },[messages])
+
+    
+    return chatUser ? ( 
         <div className="rs">
             <div className="rs-profile">
-                <img src={assets.profile_img} alt="profile pic" />
-                <h3>Marcel Christ <img src={assets.green_dot} className="dot"  alt="online dot" /> </h3>
-                <p>Hallo, ich bin der Marcel :D</p>
+                <img src={chatUser.userData.avatar} alt="profile pic" />
+                <h3> {Date.now()-chatUser.userData.lastSeen <= 70000 ? <img src={assets.green_dot} className="dot" alt="online" /> : null}
+                    {chatUser.userData.name}
+                </h3>
+                <p>{chatUser.userData.bio}</p>
             </div>
             <hr />
             <div className="rs-media">
                 <p>Media</p>
                 <div>
-                    <img src={assets.pic1} alt="media picture" />
-                    <img src={assets.pic2} alt="media picture" />
-                    <img src={assets.pic3} alt="media picture" />
-                    <img src={assets.pic4} alt="media picture" />
-                    <img src={assets.pic1} alt="media picture" />
-                    <img src={assets.pic2} alt="media picture" />
-                    <img src={assets.pic1} alt="media picture" />
-                    <img src={assets.pic2} alt="media picture" />
-                    <img src={assets.pic3} alt="media picture" />
-                    <img src={assets.pic4} alt="media picture" />
-                    <img src={assets.pic1} alt="media picture" />
-                    <img src={assets.pic2} alt="media picture" />
+                    {msgImages.map((url,index)=>(
+                        <img
+                        onClick={()=>window.open(url)}
+                        key={index} src={url} alt={`media picture-${index}`}/>
+                    ))}
                 </div>
             </div>
 
+            <button onClick={()=>logout()} >Abmelden</button>
+        </div>
+    )
+
+    : (
+        <div className="rs" >
             <button onClick={()=>logout()} >Abmelden</button>
         </div>
     )

@@ -111,7 +111,9 @@ const ChatBox = () => {
 
             <div className="chat-user">
                 <img className="profile-img" src={chatUser.userData.avatar} alt="person" />
-                <p>{chatUser.userData.name}<img src={assets.green_dot} className="dot" alt="online" /> </p>
+                <p>{chatUser.userData.name}
+                    {Date.now()-chatUser.userData.lastSeen <= 70000 ? <img src={assets.green_dot} className="dot" alt="online" /> : null} 
+                </p>
                 <img src={assets.help_icon} alt="help icon" className="help" />
             </div>
 

@@ -105,6 +105,9 @@
 
 
 @media (max-width: 700px) {
+    body{
+        background-color: #383FC7;
+    }
 
     .login {
         background: url(/background-only.png) no-repeat;

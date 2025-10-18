@@ -19,12 +19,13 @@
     min-height: 100vh;
     display: grid;
     place-items: center;
-    background: linear-gradient(
+/*     background: linear-gradient(
         to top,
         var(--primary) 0%,
         var(--dark) 70%,
         var(--dark) 100%
-    );
+    ); */
+    background-color: var(--light);
 }
 
 .chat-container{

@@ -1,140 +1,213 @@
-.ls{
-    color: var(--light);
+.ls {
     height: 100svh;
     min-width: 0;
     padding: 25px;
-}
 
-.ls-top{ padding: 10px 0 40px;}
-
-.ls-nav{
     display: flex;
-    justify-content: space-between; align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.ls-nav .logo{max-width: 120px;}
+.ls-container {
+    width: 100%;
+}
 
-.ls-nav .menu .point{ 
-    display: flex; flex-direction: column; gap: 2px;
+.ls-top {
+    padding: 10px 0 40px;
+}
+
+.ls-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ls-nav .logo {
+    max-width: 120px;
+}
+
+.ls-nav .menu .point {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     cursor: pointer;
 }
 
-.ls-nav .menu .point:hover div{ 
+.ls-nav .menu .point:hover div {
     background-color: var(--secondary);
 }
 
 .ls-nav .menu .point div {
-  width: 5px; height: 5px;
-  background-color: var(--accent);
-  border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary);
+    border-radius: 50%;
 }
 
-.ls-search{
-    background-color: var(--accent);
-    border-radius: 8px;
-    display: flex; gap: 10px;
+.ls-search {
+    background-color: white;
+    border-radius: 100px;
+
+    display: flex;
+    gap: 10px;
     align-items: center;
     padding: 10px 12px;
     margin-top: 20px;
 }
 
-.ls-search img{ width: 16px;}
+.ls-search img {
+    width: 16px;
+    opacity: 0.6;
+}
 
-.ls-search label{cursor: text;}
+.ls-search label {
+    cursor: text;
+    display: flex;
+    align-items: center;
+}
 
-.ls-search input{
-    background: transparent; color: var(--dark);
-    border: none; outline: none;
+.ls-search input {
+    background: transparent;
+    color: var(--dark);
+    border: none;
+    outline: none;
     font-size: 12px;
 }
 
-.ls-search input::placeholder{color: var(--dark); opacity: 0.5;}
+.ls-search input::placeholder {
+    color: var(--dark);
+    opacity: 0.5;
+}
 
-.ls-list{
-    display: flex; flex-direction: column;
+.ls-list {
+    display: flex;
+    flex-direction: column;
     height: 70%;
     overflow-y: scroll;
 }
 
-.friends{
-    display: flex; gap: 20px;
+.friends {
+    display: flex;
+    gap: 20px;
     align-items: center;
     padding: 10px 10px;
-    border-radius: 8px;
+    border-radius: 100px;
     cursor: pointer;
     font-size: 13px;
 }
 
-.friends:hover{
-    background-color: var(--primary);
+.friends:hover {
+    background-color: var(--accent);
 }
 
-.friends div {display: flex; flex-direction: column;}
+.friends div {
+    display: flex;
+    flex-direction: column;
+}
 
-.friends img{
+.friends img {
     width: 50px;
     aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
-.friends p, .friends span{
-    color: var(--light);
+.friends p,
+.friends span {
+    color: var(--dark);
 }
 
-.friends span{
+.friends span {
     opacity: 0.6;
     font-size: 12px;
 }
 
-.ls-nav .menu{
+.ls-nav .menu {
     position: relative;
     padding: 10px 0px;
 }
 
-.menu .sub-menu-container{
+.menu .sub-menu-container {
     position: absolute;
-    top: calc(100% - 50px); right: 0%;
+    top: calc(100% - 50px);
+    right: 0%;
     width: 150px;
     display: none;
     padding-top: 50px;
     z-index: 1;
 }
 
-.menu .sub-menu{
+.menu .sub-menu {
     padding: 20px;
     border-radius: 10px;
-    background-color: var(--light);
+    background-color: white;
+    border: 1px solid var(--primary);
     color: var(--dark);
 }
 
-.sub-menu hr{
+.sub-menu hr {
     border: none;
     height: 1px;
-    background-color: var(--accent);
+    background-color: var(--primary);
     margin: 8px 0;
 }
 
-.sub-menu p{
+.sub-menu p {
     cursor: pointer;
     font-size: 12px;
 }
 
-.sub-menu p:hover{
+.sub-menu p:hover {
     color: var(--primary);
 }
 
-.menu:hover .sub-menu-container, .sub-menu-container:hover{
+.menu:hover .sub-menu-container,
+.sub-menu-container:hover {
     display: block;
 }
 
-.menu:hover .point div, .sub-menu-container:hover .point div{
+.menu:hover .point div,
+.sub-menu-container:hover .point div {
     background-color: var(--secondary);
 }
 
-.friends.border img{
+.friends.border img {
     border: 3px solid var(--online);
 }
 
-.friends.border div span{
+.friends.border div span {
     color: var(--online);
+}
+
+.ls button {
+    background-color: var(--dark);
+    color: var(--light);
+    border: none;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'poppins-bold';
+    letter-spacing: 1px;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.ls button:hover {
+    background-color: var(--primary);
+    ;
+}
+
+
+
+
+@media (max-width: 700px) {
+    body {
+        background-color: var(--light);
+    }
+
+    .ls { padding: 20px;}
+
+    .ls-container {
+        width: calc(100vw - 40px);
+    }
+
 }

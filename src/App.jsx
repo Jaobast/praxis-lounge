@@ -31,7 +31,7 @@ const App = () => {
     <ToastContainer/>
       <Routes>
         <Route path='/' element={<Login/>} />
-        <Route path='/chat' element={<Chat/>} />
+        <Route path='/chat/*' element={<Chat/>} />
         <Route path='/profile' element={<ProfileUpdate/>} />
       </Routes>
     </>

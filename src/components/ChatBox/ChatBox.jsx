@@ -142,7 +142,7 @@ const ChatBox = () => {
                     onChange={sendImage}
                     type="file" id="image" accept="image/png, image/jpeg, image/jpg" hidden />
                 <label htmlFor="image">
-                    <svg width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_4061_765)">
                             <path d="M87.2647 0H12.8578C5.79657 0 0 6.47059 0 14.3529V85.6471C0 93.5294 5.79657 100 12.8578 100H87.2647C94.326 100 100.123 93.5294 100.123 85.6471V14.3529C100.123 6.47059 94.326 0 87.2647 0ZM12.8578 7.52941H87.2647C90.6373 7.52941 93.3775 10.5882 93.3775 14.3529V48.7059L80.625 34.5882C78.4118 32.1176 74.723 32.1176 72.4044 34.5882L48.1642 61.6471L37.3088 49.4118C35.0956 46.9412 31.4069 46.9412 29.0882 49.4118L6.7451 74.4706V14.3529C6.7451 10.5882 9.4853 7.52941 12.8578 7.52941Z" fill="currentColor" />
                             <path d="M52.8752 27.5C52.8752 33.2167 48.2085 38 42.3752 38C36.5419 38 31.8752 33.3333 31.8752 27.5C31.8752 21.6667 36.5419 17 42.3752 17C48.2085 17 52.8752 21.6667 52.8752 27.5Z" fill="currentColor" />
@@ -157,7 +157,7 @@ const ChatBox = () => {
                 </label>
                 <svg
                     onClick={sendMessage}
-                    className="send-button" width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    className="send-button" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.281555" width="100.122" height="100" rx="50" fill="currentColor" />
                     <path d="M50 77V28M50 28L34 42M50 28L65.5 42" stroke="white" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

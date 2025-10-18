@@ -3,56 +3,52 @@ import './RightSidebar.css'
 import assets from "../../assets/assets";
 import { logout } from "../../config/firebase";
 import { useContext } from "react";
-import {AppContext} from '../../context/AppContext'
+import { AppContext } from '../../context/AppContext'
 import { useEffect } from "react";
 import { useState } from "react";
 
-const RightSidebar = () =>{
+const RightSidebar = () => {
 
-    const {chatUser, messages} = useContext(AppContext);
-    const [msgImages,setMsgImages] = useState([]);
-    useEffect(()=>{
+    const { chatUser, messages } = useContext(AppContext);
+    const [msgImages, setMsgImages] = useState([]);
+    useEffect(() => {
         let tempVar = [];
-        messages.map((msg)=>{
+        messages.map((msg) => {
             if (msg.image) {
                 tempVar.push(msg.image)
             }
         })
         setMsgImages(tempVar);
-        
-    },[messages])
 
-    
-    return chatUser ? ( 
+    }, [messages])
+
+
+    return chatUser ? (
         <div className="rs">
             <div className="rs-profile">
                 <img src={chatUser.userData.avatar} alt="profile pic" />
-                <h3> {Date.now()-chatUser.userData.lastSeen <= 70000 ? <img src={assets.green_dot} className="dot" alt="online" /> : null}
-                    {chatUser.userData.name}
-                </h3>
-                <p>{chatUser.userData.bio}</p>
-            </div>
-            <hr />
-            <div className="rs-media">
-                <p>Media</p>
-                <div>
-                    {msgImages.map((url,index)=>(
-                        <img
-                        onClick={()=>window.open(url)}
-                        key={index} src={url} alt={`media picture-${index}`}/>
-                    ))}
+                <div className="rs-text">
+                    <h3> {Date.now() - chatUser.userData.lastSeen <= 70000 ? <img src={assets.green_dot} className="dot" alt="online" /> : null}
+                        {chatUser.userData.name}
+                    </h3>
+                    <p>{chatUser.userData.bio}</p>
                 </div>
             </div>
 
-            <button onClick={()=>logout()} >Abmelden</button>
+            <div className="rs-media">
+                <p>Media</p>
+                <div>
+                    {msgImages.map((url, index) => (
+                        <img
+                            onClick={() => window.open(url)}
+                            key={index} src={url} alt={`media picture-${index}`} />
+                    ))}
+                </div>
+            </div>
         </div>
     )
 
-    : (
-        <div className="rs" >
-            <button onClick={()=>logout()} >Abmelden</button>
-        </div>
-    )
+        : null
 }
 
 export default RightSidebar

@@ -88,7 +88,7 @@ const ProfileUpdate = () => {
                 <form onSubmit={handleProfileUpdate} >
                     <div className="form-top">
                         <h3>Profile Details</h3>
-                        <button className="button" onClick={() => navigate('/')}>abbrechen</button>
+                        <button className="button" onClick={() => navigate('/chat')}>abbrechen</button>
                     </div>
                     <label htmlFor="avatar">
                         <input onChange={(e) => setImage(e.target.files[0])} type="file" id="avatar" accept=".png, .jpg, .jpeg" hidden />

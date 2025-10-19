@@ -160,7 +160,7 @@
     }
 
     .chat-input{
-        width: calc(100% - 20px);
+        width: calc(100% - 40px);
         margin: auto;
         border: none;
         border-radius: 100px;
@@ -178,12 +178,20 @@
         border: 1px solid var(--light);
     }
 
-    .s-msg, .r-msg{padding: 0 10px;}
+    .s-msg, .r-msg{padding: 0 20px;}
 
     .s-msg div img, .r-msg div img{ width: 45px;}
 
     .s-msg div p, .r-msg div p{
         color: var(--light);
         opacity: 0.6;
+    }
+
+    .chat-welcome{
+        width: 100vw; height: 100svh;
+    }
+
+    .chat-welcome img{
+        width: 30vw;
     }
 }

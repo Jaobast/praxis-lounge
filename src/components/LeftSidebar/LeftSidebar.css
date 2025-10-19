@@ -207,4 +207,6 @@
         width: calc(100vw - 40px);
     }
 
+    .ls-search input {font-size: 16px;}
+
 }

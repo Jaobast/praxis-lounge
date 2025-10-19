@@ -67,3 +67,28 @@
 .rs-media div img:hover{
     opacity: 1;
 }
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+
+    .rs{
+        height: fit-content;
+        padding: 20px 0 5px ;
+    }
+
+    .rs-profile{ gap: 5px;}
+
+    .rs-profile img{width: 80px;}
+
+    .rs-profile h3, .rs-profile p{color: var(--primary);}
+
+    .rs-profile p{ font-size: 12px; margin-top: -8px;}
+
+    .rs-media{display: none;}
+
+}

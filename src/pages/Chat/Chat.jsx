@@ -33,8 +33,15 @@ const Chat = () => {
                 <div className="chat-mobile">
                     <Routes>
                         <Route index element={<LeftSidebar />} /> {/* /chat */}
-                        <Route path="box" element={<ChatBox />} /> {/* /chat/box */}
-                        <Route path="right" element={<RightSidebar />} /> {/* /chat/right */}
+                        <Route
+                            path="box"
+                            element={
+                                <div className="chat-box-layout">
+                                    <RightSidebar />
+                                    <ChatBox />
+                                </div>
+                            }
+                        />
                     </Routes>
                 </div>
             ) : (

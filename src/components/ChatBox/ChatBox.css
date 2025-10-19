@@ -57,12 +57,12 @@
 
 .chat-box svg{
     width: 30px; height: 30px;
-    color: var(--primary);
+    color: var(--accent);
     cursor: pointer;
 }
 
 .chat-input label:hover svg, .chat-box .send-button:hover{
-    color: var(--dark);
+    color: var(--primary);
 }
 
 .chat-input input{ 
@@ -145,29 +145,34 @@
     }
 
     .chat-box{
-        height: 100svh;
-        padding: 3svh 0;
+        min-height: 0;
+        flex: 1;
+        padding: 0 0 3svh;
         border: none; border-radius: 0px;
     }
 
-    .chat-user, .chat-input{
+    .chat-user{
+        display: none;
+    }
+
+    .chat-msg{
+        height: 100%;
+        padding-bottom: 70px;
+        overflow-y: scroll;
+        display: flex; flex-direction: column-reverse;
+    }
+
+    .chat-input{
         width: calc(100% - 40px);
         margin: auto;
         border: none;
         border-radius: 100px;
         padding-top: 10px; padding-bottom: 10px;
+        bottom: 3svh;
     }
-
-    .chat-user p{font-size: 17px;}
-
-    .chat-input{bottom: 3svh;}
 
     .chat-box svg, .send-button{
         width: 25px; height: 25px;
-        color: var(--primary);
         cursor: pointer;
     }
-
-
-
 }

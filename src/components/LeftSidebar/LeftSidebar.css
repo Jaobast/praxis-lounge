@@ -34,10 +34,6 @@
     cursor: pointer;
 }
 
-.ls-nav .menu .point:hover div {
-    background-color: var(--secondary);
-}
-
 .ls-nav .menu .point div {
     width: 5px;
     height: 5px;
@@ -89,16 +85,12 @@
 
 .friends {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     padding: 10px 10px;
     border-radius: 100px;
     cursor: pointer;
     font-size: 13px;
-}
-
-.friends:hover {
-    background-color: var(--accent);
 }
 
 .friends div {
@@ -118,7 +110,7 @@
 }
 
 .friends span {
-    opacity: 0.6;
+    opacity: 0.7;
     font-size: 12px;
 }
 
@@ -157,20 +149,6 @@
     font-size: 12px;
 }
 
-.sub-menu p:hover {
-    color: var(--primary);
-}
-
-.menu:hover .sub-menu-container,
-.sub-menu-container:hover {
-    display: block;
-}
-
-.menu:hover .point div,
-.sub-menu-container:hover .point div {
-    background-color: var(--secondary);
-}
-
 .friends.border img {
     border: 3px solid var(--online);
 }
@@ -184,29 +162,76 @@
     color: var(--light);
     border: none;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 15px;
     font-family: 'poppins-bold';
-    letter-spacing: 1px;
-    padding: 10px 40px;
+    padding: 5px 20px;
     cursor: pointer;
 }
 
-.ls button:hover {
-    background-color: var(--primary);
-    ;
+
+
+
+@media (min-width: 700px) {
+
+    .ls-nav .menu .point:hover div {
+        background-color: var(--secondary);
+    }
+
+    .friends:hover {
+        background-color: var(--accent);
+    }
+
+    .sub-menu p:hover {
+        color: var(--primary);
+    }
+
+    .menu:hover .sub-menu-container,
+    .sub-menu-container:hover {
+        display: block;
+    }
+
+    .menu:hover .point div,
+    .sub-menu-container:hover .point div {
+        background-color: var(--secondary);
+    }
+
+    .ls button:hover {
+        background-color: var(--primary);
+        ;
+    }
+
 }
-
-
-
 
 @media (max-width: 700px) {
 
-    .ls { padding: 20px;}
+    .ls {
+        padding: 20px;
+    }
 
     .ls-container {
         width: calc(100vw - 40px);
     }
 
-    .ls-search input {font-size: 16px;}
+    .ls-search input {
+        font-size: 16px;
+    }
+
+    .friends p {
+        font-size: 15px;
+    }
+
+    .friends span {
+        margin-top: -3px;
+    }
+
+    .friends p,
+    .friends span {
+        color: var(--light);
+    }
+
+    .ls button {
+        background-color: var(--light);
+        color: var(--primary);
+    }
 
 }

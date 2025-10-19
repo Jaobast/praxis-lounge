@@ -160,16 +160,30 @@
     }
 
     .chat-input{
-        width: calc(100% - 40px);
+        width: calc(100% - 20px);
         margin: auto;
         border: none;
         border-radius: 100px;
-        padding-top: 10px; padding-bottom: 10px;
+        padding: 10px 10px 10px 20px;
         bottom: 3svh;
     }
 
     .chat-box svg, .send-button{
         width: 25px; height: 25px;
         cursor: pointer;
+    }
+
+    .msg{
+        color: var(--light);
+        border: 1px solid var(--light);
+    }
+
+    .s-msg, .r-msg{padding: 0 10px;}
+
+    .s-msg div img, .r-msg div img{ width: 45px;}
+
+    .s-msg div p, .r-msg div p{
+        color: var(--light);
+        opacity: 0.6;
     }
 }

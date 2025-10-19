@@ -26,11 +26,14 @@ const RightSidebar = () => {
     return chatUser ? (
         <div className="rs">
             <div className="rs-profile">
-                <img src={chatUser.userData.avatar} alt="profile pic" />
+                <img className="profile-img" src={chatUser.userData.avatar} alt="profile pic" />
                 <div className="rs-text">
-                    <h3> {Date.now() - chatUser.userData.lastSeen <= 70000 ? <img src={assets.green_dot} className="dot" alt="online" /> : null}
-                        {chatUser.userData.name}
-                    </h3>
+                    <div className="online-name">
+                        {Date.now() - chatUser.userData.lastSeen <= 70000
+                        ? <img src={assets.green_dot} className="dot" alt="online" />
+                        : <img src={assets.lila_dot} className="dot" alt="offline" />}
+                        <h3>{chatUser.userData.name}</h3>
+                    </div>
                     <p>{chatUser.userData.bio}</p>
                 </div>
             </div>

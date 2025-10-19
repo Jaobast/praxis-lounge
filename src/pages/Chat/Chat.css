@@ -44,11 +44,10 @@
 
 @media (max-width: 700px) {
 
-    body{
-        background-color: var(--light);
+    .chat{
+        height: 100dvh;
+        background-color: var(--primary);
     }
-
-    .chat{height: 100dvh;}
 
     .chat-box-layout{
         height: 100dvh;

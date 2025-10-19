@@ -106,7 +106,7 @@
 
 @media (max-width: 700px) {
     body{
-        background-color: #383FC7;
+        background-color: var(--primary)!important;
     }
 
     .login {

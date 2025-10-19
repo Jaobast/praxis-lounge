@@ -171,7 +171,7 @@ const LeftSidebar = () => {
                 </div>
             </div>
 
-            <button onClick={() => logout()} >Abmelden</button>
+            <button onClick={() => logout()} >ausmelden</button>
         </div>
     )
 }

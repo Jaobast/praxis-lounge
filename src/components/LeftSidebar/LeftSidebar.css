@@ -200,9 +200,6 @@
 
 
 @media (max-width: 700px) {
-    body {
-        background-color: var(--light);
-    }
 
     .ls { padding: 20px;}
 

@@ -140,9 +140,6 @@
 
 
 @media (max-width: 700px) {
-    body {
-        background-color: var(--light);
-    }
 
     .chat-box{
         min-height: 0;

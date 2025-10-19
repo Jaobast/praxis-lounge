@@ -201,7 +201,7 @@
 
 @media (max-width: 700px) {
 
-    .ls { padding: 20px; background-color: aqua;}
+    .ls { padding: 20px;}
 
     .ls-container {
         width: calc(100vw - 40px);

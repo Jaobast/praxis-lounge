@@ -1,6 +1,6 @@
 .profile{
     min-height: 100vh;
-    background: url(/background.png) no-repeat;
+    background: url(/background-only.png) no-repeat;
     background-size: cover; background-position: center;
     display: flex;
     align-content: center; justify-content: center;
@@ -29,28 +29,50 @@
 
 .profile form{
     display: flex; flex-direction: column; gap: 20px;
-    padding: 40px;
+    width: 100%;
+    padding: 40px 25px;
 }
 
-.profile form h3{ text-transform: uppercase;}
+.profile form .form-top{
+    display: flex;
+    align-items: center; justify-content: space-between;
+}
+
+.profile form .form-top button{
+    font-size: 12px;
+}
+
+.profile form h3{
+    color: var(--primary);
+    font-family: 'candal';
+}
 
 .profile label{
     display: flex; gap: 10px;
-    align-items: center;
+    align-items: center; justify-content: space-between;
     cursor: pointer;
 }
 
+.profile label .button{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background-color: transparent;
+
+}
+
 .profile label img{
-    width: 50px;
+    width: 100px;
     aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
 .profile input, textarea{
+    background-color: var(--light);
+    color: var(--primary);
     padding: 10px;
     min-width: 300px;
-    border: none;
-    border-radius: 8px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
 }
 
 .profile input:focus, textarea:focus{
@@ -61,4 +83,17 @@
 
 .profile form button{
     border: none;
+}
+
+@media (max-width: 700px) {
+
+    .profile .profile-pic{ display: none;}
+
+    .profile-container{
+        background: var(--light);
+        width: calc(100vw - 40px); height: fit-content;
+        border-radius: 32px;
+        margin: auto;
+    }
+
 }

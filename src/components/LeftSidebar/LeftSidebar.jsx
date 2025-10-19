@@ -126,21 +126,7 @@ const LeftSidebar = () => {
 
                     <div className="ls-nav">
                         <img src={assets.logo} className="logo" alt="logo" />
-                        <div className="menu">
-                            <div className="point">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-
-                            <div className="sub-menu-container">
-                                <div className="sub-menu">
-                                    <p onClick={() => navigate('/profile')} >Profil bearbeiten</p>
-                                    <hr />
-                                    <p>Abmelden</p>
-                                </div>
-                            </div>
-                        </div>
+                        <button className="button-edit button" onClick={() => navigate('/profile')}>bearbeiten</button>
                     </div>
 
                     <div className="ls-search">
@@ -171,7 +157,7 @@ const LeftSidebar = () => {
                 </div>
             </div>
 
-            <button onClick={() => logout()} >ausmelden</button>
+            <button className="button-logout button" onClick={() => logout()} >abmelden</button>
         </div>
     )
 }

@@ -19,7 +19,7 @@ const ProfileUpdate = () => {
     const [bio, setBio] = useState("");
     const [uid, setUid] = useState("");
     const [prevImage, setPrevImage] = useState("");
-    const {setUserData} = useContext(AppContext)
+    const { setUserData } = useContext(AppContext)
 
     const handleProfileUpdate = async (event) => {
         event.preventDefault();
@@ -60,39 +60,45 @@ const ProfileUpdate = () => {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, async (user) => {
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (user) {
                 setUid(user.uid);
                 const docRef = doc(db, "users", user.uid);
                 const docSnap = await getDoc(docRef);
-                if (docSnap.data().name) {
-                    setName(docSnap.data().name);
-                }
-                if (docSnap.data().bio) {
-                    setBio(docSnap.data().bio);
-                }
-                if (docSnap.data().avatar) {
-                    setPrevImage(docSnap.data().avatar);
+                const data = docSnap.data();
+                if (data) {
+                    if (data.name) setName(data.name);
+                    if (data.bio) setBio(data.bio);
+                    if (data.avatar) setPrevImage(data.avatar);
                 }
             } else {
-                navigate('/')
+                navigate('/');
             }
-        })
-    })
+        });
+
+        // cleanup para evitar memory leaks
+        return () => unsubscribe();
+    }, [navigate]);
+
 
     return (
         <div className="profile">
             <div className="profile-container">
 
                 <form onSubmit={handleProfileUpdate} >
-                    <h3>Profile Details</h3>
+                    <div className="form-top">
+                        <h3>Profile Details</h3>
+                        <button className="button" onClick={() => navigate('/')}>abbrechen</button>
+                    </div>
                     <label htmlFor="avatar">
                         <input onChange={(e) => setImage(e.target.files[0])} type="file" id="avatar" accept=".png, .jpg, .jpeg" hidden />
                         <img src={
                             image ? URL.createObjectURL(image)
-                                : assets.avatar_icon
+                                : prevImage ? prevImage
+                                    : assets.avatar_icon
                         } alt="profil pic" />
-                        Profile Bild hochladen
+
+                        <p className="button">Bild hochladen</p>
                     </label>
 
                     <input
@@ -111,7 +117,7 @@ const ProfileUpdate = () => {
                 <img className={`profile-pic image ${image ? "border" : ""} ${prevImage ? "border" : ""}`}
                     src={image ? URL.createObjectURL(image)
                         : prevImage ? prevImage
-                        : assets.logo_icon
+                            : assets.logo_icon
                     } alt="profil pic" />
             </div>
         </div>

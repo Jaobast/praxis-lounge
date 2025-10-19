@@ -21,19 +21,13 @@ color: var(--dark);}
 button{ cursor: pointer;}
 
 .button{
-    padding: 10px 20px;
+    padding: 5px 20px;
     font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    border: none; border-radius: 8px;
+    border: none; border-radius: 100px;
     font-family: 'poppins-bold';
     background-color: var(--primary);
     color: var(--light);
-}
-
-.button:hover{
-    background-color: var(--secondary);
-    color: var(--light);
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar{display: none;}
@@ -41,3 +35,10 @@ button{ cursor: pointer;}
 img.dot{ width: 12px!important;}
 
 img{background-size: cover; background-position: center; background-repeat: no-repeat; object-fit: cover;}
+
+@media (min-width: 700px) {
+    .button:hover{
+        background-color: var(--secondary);
+        color: var(--light);
+    }
+}

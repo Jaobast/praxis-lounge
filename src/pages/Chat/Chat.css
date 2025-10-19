@@ -48,6 +48,8 @@
         background-color: var(--light);
     }
 
+    .chat{height: 100dvh;}
+
     .chat-box-layout{
         height: 100dvh;
         display: flex; flex-direction: column;

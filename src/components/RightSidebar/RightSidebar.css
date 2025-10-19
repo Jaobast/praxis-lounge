@@ -79,6 +79,7 @@
     .rs{
         height: fit-content;
         padding: 20px 0 5px ;
+        background-color: aqua;
     }
 
     .rs-profile{ gap: 5px;}

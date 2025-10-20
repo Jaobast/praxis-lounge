@@ -102,4 +102,11 @@
 
     .rs-media{display: none;}
 
+    .button-back{
+        position: absolute;
+        top: 40px; left: 30px;
+        background-color: transparent;
+        border: none;
+    }
+
 }

@@ -5,6 +5,8 @@
     border-radius: 32px;
     overflow: hidden;
     margin: auto 0;
+
+    overflow: hidden;
 }
 
 .chat-user{

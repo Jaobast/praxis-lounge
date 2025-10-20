@@ -20,34 +20,49 @@ const LeftSidebar = () => {
     const [showSearch, setShowSearch] = useState(false);
     const isMobile = useIsMobile(700);
 
-    const inputHandler = async (e) => {
-        try {
-            const input = e.target.value;
-            if (input) {
-                setShowSearch(true);
-                const userRef = collection(db, 'users');
-                const q = query(userRef, where("username", "==", input.toLowerCase()));
-                const querySnap = await getDocs(q);
-                if (!querySnap.empty && querySnap.docs[0].data().id !== userData.id) {
-                    let userExist = false;
-                    chatData.map((user) => {
-                        if (user.rId === querySnap.docs[0].data().id) {
-                            userExist = true;
-                        }
-                    })
+const inputHandler = async (e) => {
+    try {
+        const input = e.target.value.trim().toLowerCase();
+        if (input) {
+            setShowSearch(true);
+            const userRef = collection(db, 'users');
+            const q = query(
+                userRef,
+                where("username", ">=", input),
+                where("username", "<=", input + "\uf8ff")
+            );
+
+            const querySnap = await getDocs(q);
+
+            if (!querySnap.empty) {
+                // procura o primeiro usuário diferente do usuário logado
+                const foundUser = querySnap.docs
+                    .map(doc => doc.data())
+                    .find(u => u.id !== userData.id);
+
+                if (foundUser) {
+                    // evita duplicar chat
+                    const userExist = chatData.some(u => u.rId === foundUser.id);
                     if (!userExist) {
-                        setUser(querySnap.docs[0].data());
+                        setUser(foundUser);
+                    } else {
+                        setUser(null);
                     }
                 } else {
                     setUser(null);
                 }
             } else {
-                setShowSearch(false);
+                setUser(null);
             }
-        } catch (error) {
-
+        } else {
+            setShowSearch(false);
+            setUser(null);
         }
+    } catch (error) {
+        console.error("Erro na busca:", error);
     }
+};
+
 
     const addChat = async () => {
         const messagesRef = collection(db, "messages");

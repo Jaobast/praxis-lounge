@@ -6,7 +6,7 @@
     overflow: hidden;
     margin: auto 0;
 
-    overflow: hidden;
+    display: flex; flex-direction: column;
 }
 
 .chat-user{
@@ -41,8 +41,6 @@
     padding: 15px 20px 15px 30px;
     background: white;
     border-top: 1px solid var(--primary);
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
 }
 
 .chat-input .input-text{
@@ -144,7 +142,6 @@
     .chat-box{
         min-height: 0;
         flex: 1;
-        padding: 0 0 3svh;
         border: none; border-radius: 0px;
     }
 

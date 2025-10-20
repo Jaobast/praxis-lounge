@@ -1,9 +1,10 @@
-import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
+import { doc, getDoc, onSnapshot, updateDoc, deleteDoc } from "firebase/firestore";
 import { useState } from "react";
 import { createContext } from "react";
 import { auth, db } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 export const AppContext = createContext();
 
@@ -41,6 +42,44 @@ const AppContextProvider = (props) => {
 
         }
     }
+
+    const deleteChat = async (rId, messageId) => {
+    if (!userData || !rId || !messageId) return;
+    try {
+        // Referências
+        const userChatRef = doc(db, 'chats', userData.id);
+        const otherUserChatRef = doc(db, 'chats', rId);
+        const messageRef = doc(db, 'messages', messageId);
+
+        // Remove o chat do usuário logado
+        const userChatSnap = await getDoc(userChatRef);
+        if (userChatSnap.exists()) {
+            const chats = userChatSnap.data().chatsData || [];
+            const updatedChats = chats.filter(chat => chat.messageId !== messageId);
+            await updateDoc(userChatRef, { chatsData: updatedChats });
+        }
+
+        // Remove o chat do outro usuário
+        const otherChatSnap = await getDoc(otherUserChatRef);
+        if (otherChatSnap.exists()) {
+            const chats = otherChatSnap.data().chatsData || [];
+            const updatedChats = chats.filter(chat => chat.messageId !== messageId);
+            await updateDoc(otherUserChatRef, { chatsData: updatedChats });
+        }
+
+        // Apaga o documento de mensagens
+        await deleteDoc(messageRef);
+
+        // Atualiza estado local
+        setChatdata(prev => prev ? prev.filter(c => c.messageId !== messageId) : []);
+
+        toast.success("Chat wurde gelöscht!");
+    } catch (error) {
+        console.error("Fehler beim Löschen:", error);
+        toast.error("Fehler beim Löschen");
+    }
+};
+
 
     useEffect(() => {
         if (!userData) return;
@@ -89,7 +128,8 @@ const AppContextProvider = (props) => {
         loadUserData,
         messages, setMessages,
         messagesId, setMessagesId,
-        chatUser, setChatUser
+        chatUser, setChatUser,
+        deleteChat
     }
 
     return (

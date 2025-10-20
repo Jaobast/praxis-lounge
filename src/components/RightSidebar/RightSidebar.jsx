@@ -10,9 +10,16 @@ import { useNavigate } from "react-router-dom";
 
 const RightSidebar = () => {
 
-    const { chatUser, messages } = useContext(AppContext);
+    const { chatUser, messages, deleteChat } = useContext(AppContext);
     const [msgImages, setMsgImages] = useState([]);
     const navigate = useNavigate();
+
+    const handleDelete = async (chat) => {
+        if (window.confirm(`Möchtest du den Chat mit ${chat.userData.name} wirklich löschen?`)) {
+            await deleteChat(chat.rId, chat.messageId);
+        }
+    };
+
     useEffect(() => {
         let tempVar = [];
         messages.map((msg) => {
@@ -27,7 +34,11 @@ const RightSidebar = () => {
 
     return chatUser ? (
         <div className="rs">
-            <button className="button-back" onClick={() => navigate('/chat')} ><img src={assets.arrow_icon} alt="" /></button>
+
+            <div className="button-absolute">
+                <button className="button-back" onClick={() => navigate('/chat')} ><img src={assets.arrow_icon} alt="back_icon" /></button>
+                <button className="button-delete" onClick={() => handleDelete(chatUser)}> <img src={assets.delete_icon} alt="delete_icon" /> </button>
+            </div>
 
             <div className="rs-profile">
                 {chatUser.userData.avatar
@@ -45,6 +56,9 @@ const RightSidebar = () => {
                     <p>{chatUser.userData.bio}</p>
                 </div>
             </div>
+
+            
+            
 
             <div className="rs-media">
                 <p>Media</p>

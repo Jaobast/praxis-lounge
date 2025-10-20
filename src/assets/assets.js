@@ -9,6 +9,7 @@ import search_icon from './icon/search_icon.svg'
 import send_button from './icon/send_button.svg'
 import green_dot from './icon/green_dot.svg'
 import lila_dot from './icon/lila_dot.svg'
+import delete_icon from './icon/delete_icon.svg'
 
 import pic1 from './pic/pic1.png'
 import pic2 from './pic/pic2.png'
@@ -45,7 +46,8 @@ const assets = {
     profile_img,
     send_button,
     green_dot,
-    lila_dot
+    lila_dot,
+    delete_icon
 }
 
 export default assets;

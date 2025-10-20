@@ -50,6 +50,10 @@
         overflow: hidden;
     }
 
+    .chat-mobile{
+        overflow: hidden;
+    }
+
     .chat-box-layout{
         height: 100svh;
         display: flex; flex-direction: column;

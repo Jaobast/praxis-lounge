@@ -1,4 +1,5 @@
 import avatar_icon from './icon/avatar_icon.svg'
+import avatar_icon_accent from './icon/avatar_icon_accent.svg'
 import gallery_icon from './icon/gallery_icon.svg'
 import help_icon from './icon/help_icon.svg'
 import add_icon from './icon/add_icon.png'
@@ -24,6 +25,7 @@ import logo_big from './logo/logo_big.png'
 
 const assets = {
     avatar_icon,
+    avatar_icon_accent,
     gallery_icon,
     help_icon,
     menu_icon,

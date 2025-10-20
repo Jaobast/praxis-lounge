@@ -130,7 +130,10 @@
 
     .chat{ display: block;}
 
-    .ls {padding: 0 20px; height: 100%;}
+    .ls {
+        padding: 0 20px; height: 100%;
+        background-color: pink;
+    }
 
     .ls-top {padding: 0 0 40px;}
 

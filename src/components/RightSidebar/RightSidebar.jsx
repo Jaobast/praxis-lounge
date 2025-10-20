@@ -28,14 +28,18 @@ const RightSidebar = () => {
     return chatUser ? (
         <div className="rs">
             <button className="button-back" onClick={() => navigate('/chat')} ><img src={assets.arrow_icon} alt="" /></button>
-            
+
             <div className="rs-profile">
-                <img className="profile-img" src={chatUser.userData.avatar} alt="profile pic" />
+                {chatUser.userData.avatar
+                    ? <img className="profile-img" src={chatUser.userData.avatar} alt="" />
+                    : <img className="profile-img" src={assets.avatar_icon_accent} alt="" />
+                }
+                
                 <div className="rs-text">
                     <div className="online-name">
                         {Date.now() - chatUser.userData.lastSeen <= 70000
-                        ? <img src={assets.green_dot} className="dot" alt="online" />
-                        : <img src={assets.lila_dot} className="dot" alt="offline" />}
+                            ? <img src={assets.green_dot} className="dot" alt="online" />
+                            : <img src={assets.lila_dot} className="dot" alt="offline" />}
                         <h3>{chatUser.userData.name}</h3>
                     </div>
                     <p>{chatUser.userData.bio}</p>

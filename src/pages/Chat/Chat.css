@@ -47,6 +47,7 @@
     .chat{
         height: 100svh;
         background-color: var(--primary);
+        overflow: hidden;
     }
 
     .chat-box-layout{

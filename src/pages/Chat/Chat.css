@@ -46,16 +46,12 @@
 
     .chat{
         height: 100svh;
-        background-color: green;
-    }
-
-    .chat-mobile{
-        background-color: yellow;
+        background-color: var(--primary);
     }
 
     .chat-box-layout{
         height: 100dvh;
         display: flex; flex-direction: column;
-        background-color: red;
+        overflow: hidden;
     }
 }

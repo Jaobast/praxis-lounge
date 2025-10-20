@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .ls-container {
@@ -132,7 +133,6 @@
 
     .ls {
         padding: 0 20px; height: 100svh; width: 100vw;
-        background-color: pink;
     }
 
     .ls-top {padding: 0 0 40px;}

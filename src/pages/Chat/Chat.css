@@ -51,6 +51,10 @@
 
 @media (max-width: 700px) {
 
+    body{
+        background-color: var(--primary);
+    }
+
     .chat{
         height: 100svh;
         background-color: var(--primary);

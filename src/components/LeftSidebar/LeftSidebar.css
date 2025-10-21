@@ -166,7 +166,7 @@
         color: var(--primary);
     }
 
-    .tb .button-chat{ color: var(--accent);}
-    .tb .button-profile{ color: var(--primary);}
+    /* .tb .button-chat{ color: var(--accent);}
+    .tb .button-profile{ color: var(--primary);} */
 
 }

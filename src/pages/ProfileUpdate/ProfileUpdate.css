@@ -95,7 +95,7 @@
         margin: auto;
     }
 
-    .tb .button-chat{ color: var(--primary);}
-    .tb .button-profile{ color: var(--accent);}
+/*     .tb .button-chat{ color: var(--primary);}
+    .tb .button-profile{ color: var(--accent);} */
 
 }

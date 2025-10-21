@@ -1,5 +1,5 @@
 import React from "react";
-import './LeftSidebar.css'
+import './LeftSidebar.css';
 import assets from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { arrayUnion, collection, doc, getDocs, query, serverTimestamp, setDoc, where, updateDoc, getDoc } from "firebase/firestore";

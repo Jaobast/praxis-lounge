@@ -51,11 +51,6 @@
 
 @media (max-width: 700px) {
 
-    html, body {
-  background: linear-gradient(to top, #1A1A2E 0%, #4A00E0 100%);
-  background-attachment: fixed;
-}
-
     .chat{
         height: 100svh;
         background-color: var(--primary);

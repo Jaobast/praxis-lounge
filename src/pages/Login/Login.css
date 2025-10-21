@@ -105,9 +105,9 @@
 
 
 @media (max-width: 700px) {
-    body{
-        background-color: var(--primary)!important;
-    }
+    /* body{
+        background-color: var(--accent);
+    } */
 
     .login {
         height: 100svh;

@@ -21,9 +21,10 @@
     place-items: center;
 /*     background: linear-gradient(
         to top,
-        var(--primary) 0%,
-        var(--dark) 70%,
-        var(--dark) 100%
+        var(--secondary) 0%,
+        var(--secondary) 50%,
+        var(--primary) 50%,
+        var(--primary) 100%
     ); */
     background-color: var(--light);
 }
@@ -49,6 +50,11 @@
 
 
 @media (max-width: 700px) {
+
+    html, body {
+  background: linear-gradient(to top, #1A1A2E 0%, #4A00E0 100%);
+  background-attachment: fixed;
+}
 
     .chat{
         height: 100svh;

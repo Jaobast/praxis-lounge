@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import upload from "../../lib/upload";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import ToolBar from "../../components/ToolBar/ToolBar";
 
 const ProfileUpdate = () => {
     const navigate = useNavigate();
@@ -120,6 +121,8 @@ const ProfileUpdate = () => {
                             : assets.logo_icon
                     } alt="profil pic" />
             </div>
+
+            <ToolBar/>
         </div>
     )
 }

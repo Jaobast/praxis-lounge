@@ -17,6 +17,7 @@ const RightSidebar = () => {
     const handleDelete = async (chat) => {
         if (window.confirm(`Möchtest du den Chat mit ${chat.userData.name} wirklich löschen?`)) {
             await deleteChat(chat.rId, chat.messageId);
+            await navigate('/chat');
         }
     };
 

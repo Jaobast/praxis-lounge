@@ -73,7 +73,6 @@ const AppContextProvider = (props) => {
         // Atualiza estado local
         setChatdata(prev => prev ? prev.filter(c => c.messageId !== messageId) : []);
 
-        toast.success("Chat wurde gelöscht!");
     } catch (error) {
         console.error("Fehler beim Löschen:", error);
         toast.error("Fehler beim Löschen");

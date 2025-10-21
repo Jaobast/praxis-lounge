@@ -35,6 +35,12 @@
     grid-template-columns: 1fr 2fr 1fr;
 }
 
+.loading-container{
+    width: 100vw; height: 100svh;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+
 .loading{
     font-size: 50px;
     color: var(--light);
@@ -58,5 +64,9 @@
         height: 100svh;
         display: flex; flex-direction: column;
         overflow: hidden;
+    }
+
+    .loading{
+        font-size: 25px;
     }
 }

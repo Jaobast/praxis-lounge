@@ -1,0 +1,20 @@
+.tb{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100vw;
+    background-color: var(--secondary);
+    padding: 20px 0;
+
+    display: flex; gap: 50px;
+    align-items: center; justify-content: center;
+}
+
+.tb button{
+    border: none;
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.tb button p{
+    font-family: 'poppins-bold';
+}

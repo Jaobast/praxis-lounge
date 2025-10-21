@@ -138,6 +138,8 @@
 
     .ls-top {padding: 0 0 40px;}
 
+    .ls-nav { justify-content: center;}
+
     .ls-nav .menu .point div{ background-color: var(--accent);}
 
     .ls-search { margin-top: 40px;}
@@ -159,15 +161,12 @@
         color: var(--light);
     }
 
-    .ls .button-edit {
+    .ls .button-logout {
         background-color: var(--accent);
         color: var(--primary);
-        font-size: 12px;
     }
 
-    .ls .button-logout {
-        background-color: var(--light);
-        color: var(--primary);
-    }
+    .tb .button-chat{ color: var(--accent);}
+    .tb .button-profile{ color: var(--primary);}
 
 }

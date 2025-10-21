@@ -1,7 +1,6 @@
 .profile{
-    min-height: 100vh;
-    background: url(/background-only.png) no-repeat;
-    background-size: cover; background-position: center;
+    min-height: 100svh;
+    background-color: var(--light);
     display: flex;
     align-content: center; justify-content: center;
 }
@@ -95,5 +94,8 @@
         border-radius: 32px;
         margin: auto;
     }
+
+    .tb .button-chat{ color: var(--primary);}
+    .tb .button-profile{ color: var(--accent);}
 
 }

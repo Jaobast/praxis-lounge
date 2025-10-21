@@ -10,6 +10,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import useIsMobile from "../../context/useIsMobile";
 import ChatBox from "../ChatBox/ChatBox";
+import ToolBar from "../ToolBar/ToolBar";
 
 const LeftSidebar = () => {
 
@@ -141,7 +142,7 @@ const inputHandler = async (e) => {
 
                     <div className="ls-nav">
                         <img src={assets.logo} className="logo" alt="logo" />
-                        <button className="button-edit button" onClick={() => navigate('/profile')}>bearbeiten</button>
+                        {/* <button className="button-edit button" onClick={() => navigate('/profile')}>bearbeiten</button> */}
                     </div>
 
                     <div className="ls-search">
@@ -177,7 +178,9 @@ const inputHandler = async (e) => {
                 </div>
             </div>
 
-            <button className="button-logout button" onClick={() => logout()} >abmelden</button>
+            {/* <button className="button-logout button" onClick={() => logout()} >abmelden</button> */}
+
+            <ToolBar/>
         </div>
     )
 }

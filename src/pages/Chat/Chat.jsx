@@ -20,7 +20,7 @@ const Chat = () => {
 
     if (loading) {
         return (
-            <div className="chat">
+            <div className="loading-container">
                 <p className="loading">Loading...</p>
             </div>
         );

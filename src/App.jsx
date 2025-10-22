@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Chat from "./pages/Chat/Chat";
+import Profile from "./pages/Profile/Profile";
 import ProfileUpdate from "./pages/ProfileUpdate/ProfileUpdate";
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from "react";
@@ -32,7 +33,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Login/>} />
         <Route path='/chat/*' element={<Chat/>} />
-        <Route path='/profile' element={<ProfileUpdate/>} />
+        <Route path='/profileupdate' element={<ProfileUpdate/>} />
+        <Route path='/profile' element={<Profile/>} />
       </Routes>
     </>
   )

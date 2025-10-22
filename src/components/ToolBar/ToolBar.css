@@ -22,24 +22,25 @@
 
 .tb button svg{ margin-top: 3px;}
 
-.button-ischat{
+.ischat{
     color: var(--primary);
 }
 
-.button-ischat .button-chat{
+.ischat .button-chat{
     color: var(--accent);
 }
 
-.button-isprofile{
+.isprofile, .isprofileupdate{
     background-color: var(--accent);
 }
 
-.button-isprofile .logo, .button-isprofile .button-chat{
+.isprofile .logo, .isprofile .button-chat,
+.isprofileupdate .logo, .isprofileupdate .button-chat{
     color: var(--light);
     opacity: 0.5;
 }
 
-.button-isprofile .button-profile{
+.isprofile .button-profile, .isprofileupdate .button-profile{
     color: var(--primary);
     opacity: 1;
 }

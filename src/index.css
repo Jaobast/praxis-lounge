@@ -21,7 +21,7 @@ color: var(--dark);}
 button{ cursor: pointer;}
 
 .button{
-    padding: 5px 20px;
+    padding: 5px 15px;
     font-size: 15px;
     border: none; border-radius: 100px;
     font-family: 'poppins-bold';
@@ -30,11 +30,11 @@ button{ cursor: pointer;}
     cursor: pointer;
 }
 
-body.page-chat{ background-color: var(--primary);}
+body.page-chat, body.page-chat-box,
+body.page-home
+{ background-color: var(--primary);}
 
-body.page-profile{ background-color: var(--light);}
-
-body.page-chat-box{ background-color: var(--primary);}
+body.page-profile, body.page-profileupdate{ background-color: var(--light);}
 
 ::-webkit-scrollbar{display: none;}
 

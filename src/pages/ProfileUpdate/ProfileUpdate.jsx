@@ -52,7 +52,7 @@ const ProfileUpdate = () => {
 
             const snap = await getDoc(docRef);
             setUserData(snap.data());
-            navigate('/chat');
+            navigate('/profile');
 
         } catch (error) {
             console.error(error);
@@ -83,13 +83,10 @@ const ProfileUpdate = () => {
 
 
     return (
-        <div className="profile">
-            <div className="profile-container">
-
-                <form onSubmit={handleProfileUpdate} >
+        <div className="profile-update">
+            <form onSubmit={handleProfileUpdate} >
                     <div className="form-top">
-                        <h3>Profile Details</h3>
-                        <button className="button" onClick={() => navigate('/chat')}>abbrechen</button>
+                        <h2>Profile bearbeiten</h2>
                     </div>
                     <label htmlFor="avatar">
                         <input onChange={(e) => setImage(e.target.files[0])} type="file" id="avatar" accept=".png, .jpg, .jpeg" hidden />
@@ -112,15 +109,12 @@ const ProfileUpdate = () => {
                         value={bio}
                         placeholder="Profile Bio schreiben" required
                     ></textarea>
-                    <button type="submit" className="button">Speichern</button>
-                </form>
 
-                <img className={`profile-pic image ${image ? "border" : ""} ${prevImage ? "border" : ""}`}
-                    src={image ? URL.createObjectURL(image)
-                        : prevImage ? prevImage
-                            : assets.logo_icon
-                    } alt="profil pic" />
-            </div>
+                    <div className="button-container">
+                        <button type="submit" className="button">Speichern</button>
+                        <button className="button button-abbrechen" onClick={() => navigate('/profile')}>abbrechen</button>
+                    </div>
+                </form>
 
             <ToolBar/>
         </div>

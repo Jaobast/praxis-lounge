@@ -1,0 +1,33 @@
+.profile{
+    display: flex; flex-direction: column; gap: 30px;
+    align-items: center;
+    width: 100vw; height: 100svh;
+    padding: 20px;
+
+    color: var(--primary);
+}
+
+.profile .profile-pic{
+    width: 130px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.profile .info{
+    display: flex; flex-direction: column;
+    align-items: center;
+}
+
+.profile .profile-email{
+    font-size: 12px;
+    margin: -10px 0 10px;
+}
+
+.profile .button-container{
+    display: flex; gap: 30px;
+}
+
+.profile .button-logout{
+    background-color: var(--accent);
+    color: var(--primary);
+}

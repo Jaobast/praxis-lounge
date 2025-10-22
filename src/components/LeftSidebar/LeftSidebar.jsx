@@ -3,7 +3,7 @@ import './LeftSidebar.css';
 import assets from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { arrayUnion, collection, doc, getDocs, query, serverTimestamp, setDoc, where, updateDoc, getDoc } from "firebase/firestore";
-import { db, logout } from "../../config/firebase";
+import { db } from "../../config/firebase";
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { useState } from "react";
@@ -142,7 +142,6 @@ const inputHandler = async (e) => {
 
                     <div className="ls-nav">
                         <img src={assets.logo} className="logo" alt="logo" />
-                        {/* <button className="button-edit button" onClick={() => navigate('/profile')}>bearbeiten</button> */}
                     </div>
 
                     <div className="ls-search">
@@ -177,8 +176,6 @@ const inputHandler = async (e) => {
                     }
                 </div>
             </div>
-
-            {/* <button className="button-logout button" onClick={() => logout()} >abmelden</button> */}
 
             <ToolBar/>
         </div>

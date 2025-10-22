@@ -1,71 +1,62 @@
-.profile{
+.profile-update {
     min-height: 100svh;
     background-color: var(--light);
     display: flex;
     align-content: center; justify-content: center;
 }
 
-.profile-container{
-    background: var(--light);
-    display: flex; flex-direction: row-reverse;
-    align-items: center; justify-content: space-between;
-    width: 700px; height: fit-content;
-    border-radius: 32px;
-    margin: auto;
-}
-
-.profile .profile-pic{
+.profile-update .profile-pic{
     width: 200px;
     margin: 20px auto;
 }
 
-.profile .profile-pic.border{
+.profile-update .profile-pic.border{
     aspect-ratio: 1/1;
     border-radius: 50%;
     border: 6px solid var(--primary);
     background-color: var(--primary);
 }
 
-.profile form{
+.profile-update form{
     display: flex; flex-direction: column; gap: 20px;
     width: 100%;
     padding: 40px 25px;
 }
 
-.profile form .form-top{
+.profile-update form .form-top{
     display: flex;
     align-items: center; justify-content: space-between;
 }
 
-.profile form .form-top button{
+.profile-update form .form-top button{
     font-size: 12px;
 }
 
-.profile form h3{
+.profile-update form h2{
     color: var(--primary);
-    font-family: 'candal';
+    font-family: 'poppins-bold';
 }
 
-.profile label{
+.profile-update label{
     display: flex; gap: 10px;
     align-items: center; justify-content: space-between;
     cursor: pointer;
 }
 
-.profile label .button{
+.profile-update label .button{
     border: 1px solid var(--primary);
     color: var(--primary);
     background-color: transparent;
 
 }
 
-.profile label img{
+.profile-update label img{
     width: 100px;
     aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
-.profile input, textarea{
+.profile-update input, textarea{
     background-color: var(--light);
     color: var(--primary);
     padding: 10px;
@@ -74,25 +65,32 @@
     border-radius: 10px;
 }
 
-.profile input:focus, textarea:focus{
+.profile-update input:focus, textarea:focus{
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 2px var(--primary);
 }
 
-.profile form button{
+.profile-update form button{
     border: none;
+}
+
+.profile-update .button-container{
+    display: flex; gap: 30px;
+    justify-content: center;
+}
+
+.profile-update .button-abbrechen{
+    background-color: var(--accent);
+    color: var(--primary);
 }
 
 @media (max-width: 700px) {
 
-    .profile .profile-pic{ display: none;}
+    .profile-update .profile-pic{ display: none;}
 
-    .profile-container{
-        background: var(--light);
-        width: calc(100vw - 40px); height: fit-content;
-        border-radius: 32px;
-        margin: auto;
+    .profile-update{
+        padding: 0 20px;
     }
 
 /*     .tb .button-chat{ color: var(--primary);}

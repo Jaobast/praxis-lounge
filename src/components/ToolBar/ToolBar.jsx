@@ -10,9 +10,10 @@ const ToolBar = () => {
 
     const isChat = location.pathname === '/chat';
     const isProfile = location.pathname === '/profile';
+    const isProfileUpdate = location.pathname === '/profileupdate';
 
     return (
-        <div className= {`tb ${isProfile ? 'button-isprofile' : ''} ${isChat ? 'button-ischat' : ''}`}>
+        <div className= {`tb ${isProfile ? 'isprofile' : ''} ${isChat ? 'ischat' : ''} ${isProfileUpdate ? 'isprofileupdate' : ''}`}>
             <button
                 className="button-chat"
                 onClick={() => navigate('/chat')}>

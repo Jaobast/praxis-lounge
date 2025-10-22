@@ -4,10 +4,10 @@
     height: 270px;
     width: 100vw;
     background-color: var(--secondary);
-    padding: 20px 0;
+    padding: 20px 10px;
 
-    display: flex; gap: 100px;
-    align-items: start; justify-content: center;
+    display: flex;
+    align-items: start; justify-content: space-around;
 }
 
 .tb button{
@@ -20,6 +20,12 @@
     font-family: 'poppins-bold';
 }
 
+.tb button svg{ margin-top: 3px;}
+
+.button-ischat{
+    color: var(--primary);
+}
+
 .button-ischat .button-chat{
     color: var(--accent);
 }
@@ -28,11 +34,12 @@
     background-color: var(--accent);
 }
 
-.button-isprofile .button-chat{
+.button-isprofile .logo, .button-isprofile .button-chat{
     color: var(--light);
     opacity: 0.5;
 }
 
 .button-isprofile .button-profile{
     color: var(--primary);
+    opacity: 1;
 }

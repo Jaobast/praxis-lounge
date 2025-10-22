@@ -30,13 +30,11 @@ button{ cursor: pointer;}
     cursor: pointer;
 }
 
-body.page-chat{
-    background-color: var(--primary);
-}
+body.page-chat{ background-color: var(--primary);}
 
-body.page-profile{
-    background-color: var(--light);
-}
+body.page-profile{ background-color: var(--light);}
+
+body.page-chat-box{ background-color: var(--primary);}
 
 ::-webkit-scrollbar{display: none;}
 

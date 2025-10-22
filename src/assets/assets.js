@@ -18,6 +18,7 @@ import pic2 from './pic/pic2.png'
 import pic3 from './pic/pic3.png'
 import pic4 from './pic/pic4.png'
 import profile_img from './pic/profile/profile_marcel.jpg'
+import img_pflege from './pic/background-pflege.png'
 
 import logo_svg from './logo/logo.svg'
 import logo from './logo/logo.svg'
@@ -26,6 +27,7 @@ import logo_text_pink from './logo/logo-text_pink.svg'
 import logo_icon from './logo/logo_icon.svg'
 import logo_big from './logo/logo_big.png'
 import logo_stroke from './logo/logo_stroke.svg'
+import logo_start from './logo/logo_start.svg'
 
 const assets = {
     avatar_icon,
@@ -53,7 +55,9 @@ const assets = {
     delete_icon,
     chat_icon,
     profile_icon,
-    logo_stroke
+    logo_stroke,
+    logo_start,
+    img_pflege
 }
 
 export default assets;

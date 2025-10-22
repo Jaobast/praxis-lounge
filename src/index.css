@@ -31,10 +31,12 @@ button{ cursor: pointer;}
 }
 
 body.page-chat, body.page-chat-box,
-body.page-home
+body.page-login
 { background-color: var(--primary);}
 
-body.page-profile, body.page-profileupdate{ background-color: var(--light);}
+body.page-profile, body.page-profileupdate,
+body.page-home
+{ background-color: var(--light);}
 
 ::-webkit-scrollbar{display: none;}
 

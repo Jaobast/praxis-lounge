@@ -40,7 +40,12 @@
     opacity: 0.5;
 }
 
-.isprofile .button-profile, .isprofileupdate .button-profile{
+.isprofile .button-profile{
     color: var(--primary);
     opacity: 1;
 }
+
+.isprofileupdate .button-chat, .isprofileupdate .button-profile{
+    display: none;
+}
+

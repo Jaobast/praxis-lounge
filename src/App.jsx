@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import Start from "./pages/Start/Start";
 import Login from "./pages/Login/Login";
 import Chat from "./pages/Chat/Chat";
 import Profile from "./pages/Profile/Profile";
@@ -31,7 +32,8 @@ const App = () => {
     <>
     <ToastContainer/>
       <Routes>
-        <Route path='/' element={<Login/>} />
+        <Route path='/' element={<Start/>} />
+        <Route path='/login' element={<Login/>} />
         <Route path='/chat/*' element={<Chat/>} />
         <Route path='/profileupdate' element={<ProfileUpdate/>} />
         <Route path='/profile' element={<Profile/>} />

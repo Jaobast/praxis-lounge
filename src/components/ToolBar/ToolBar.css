@@ -6,23 +6,33 @@
     background-color: var(--secondary);
     padding: 20px 0;
 
-    display: flex; gap: 50px;
+    display: flex; gap: 100px;
     align-items: start; justify-content: center;
 }
 
 .tb button{
     border: none;
     background-color: transparent;
+    color: var(--primary);
 }
 
 .tb button p{
     font-family: 'poppins-bold';
 }
 
-.button-profile{
+.button-ischat .button-chat{
     color: var(--accent);
 }
 
-.button-ischat, .button-isprofile{
+.button-isprofile{
+    background-color: var(--accent);
+}
+
+.button-isprofile .button-chat{
+    color: var(--light);
+    opacity: 0.5;
+}
+
+.button-isprofile .button-profile{
     color: var(--primary);
 }

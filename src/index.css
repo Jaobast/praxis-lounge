@@ -30,11 +30,23 @@ button{ cursor: pointer;}
     cursor: pointer;
 }
 
+body.page-chat{
+    background-color: var(--primary);
+}
+
+body.page-profile{
+    background-color: var(--light);
+}
+
 ::-webkit-scrollbar{display: none;}
 
 img.dot{ width: 12px!important;}
 
 img{background-size: cover; background-position: center; background-repeat: no-repeat; object-fit: cover;}
+
+.page-chat{
+
+}
 
 @media (min-width: 700px) {
     .button:hover{

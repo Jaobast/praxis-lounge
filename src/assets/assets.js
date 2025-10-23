@@ -12,11 +12,9 @@ import lila_dot from './icon/lila_dot.svg'
 import delete_icon from './icon/delete_icon.svg'
 import chat_icon from './icon/chat_icon.svg'
 import profile_icon from './icon/profile_icon.svg'
+import megaphone_icon from './icon/megaphone.svg'
+import thinking_icon from './icon/thinking.svg'
 
-import pic1 from './pic/pic1.png'
-import pic2 from './pic/pic2.png'
-import pic3 from './pic/pic3.png'
-import pic4 from './pic/pic4.png'
 import profile_img from './pic/profile/profile_marcel.jpg'
 import img_pflege from './pic/background-pflege.png'
 
@@ -44,10 +42,6 @@ const assets = {
     logo_big,
     logo_icon,
     logo,
-    pic1,
-    pic2,
-    pic3,
-    pic4,
     profile_img,
     send_button,
     green_dot,
@@ -57,7 +51,9 @@ const assets = {
     profile_icon,
     logo_stroke,
     logo_start,
-    img_pflege
+    img_pflege,
+    megaphone_icon,
+    thinking_icon
 }
 
 export default assets;

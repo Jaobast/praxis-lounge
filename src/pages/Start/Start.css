@@ -1,6 +1,7 @@
 .start{
     height: calc(100svh + 100px); width: 100vw;
     display: flex; flex-direction: column;
+    overflow: hidden;
 }
 
 .start .start-container, .start .pflege-img{
@@ -9,5 +10,23 @@
 
 .start .start-container{
     display: flex; flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
+
+.start section{
+    padding: 0 20px;
+    display: flex; flex-direction: column;
+    gap: 10px;
+    color: var(--primary);
+}
+
+.start .description-container{
+    display: flex; gap: 10px;
+}
+
+.start .description-container img{
+    width: 40px; height: 40px;
+}
+
+.start .description-container p{ font-size: 13px;}

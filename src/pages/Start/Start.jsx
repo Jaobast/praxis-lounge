@@ -16,7 +16,7 @@ const Start = () => {
                 <section>
 
                     <div className="description-container">
-                        <img src={assets.megaphone_icon} alt="" />
+                        <img src={assets.communication_icon} alt="" />
                         <div className="text">
                             <h3>Schnelle Kommunikation</h3>
                             <p>Tausche dich einfach und sicher mit deinen Kolleg*innen aus</p>
@@ -32,7 +32,7 @@ const Start = () => {
                     </div>
 
                     <div className="description-container">
-                        <img src={assets.thinking_icon} alt="" />
+                        <img src={assets.idea_icon} alt="" />
                         <div className="text">
                             <h3>Klär deine Fragen jederzeit</h3>
                             <p>Klär deine Zweifel jederzeit und überall</p>

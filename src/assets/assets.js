@@ -12,8 +12,8 @@ import lila_dot from './icon/lila_dot.svg'
 import delete_icon from './icon/delete_icon.svg'
 import chat_icon from './icon/chat_icon.svg'
 import profile_icon from './icon/profile_icon.svg'
-import megaphone_icon from './icon/megaphone.svg'
-import thinking_icon from './icon/thinking.svg'
+import communication_icon from './icon/communication.svg'
+import idea_icon from './icon/idea.svg'
 
 import profile_img from './pic/profile/profile_marcel.jpg'
 import img_pflege from './pic/background-pflege.png'
@@ -52,8 +52,8 @@ const assets = {
     logo_stroke,
     logo_start,
     img_pflege,
-    megaphone_icon,
-    thinking_icon
+    communication_icon,
+    idea_icon
 }
 
 export default assets;

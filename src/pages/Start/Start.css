@@ -30,3 +30,10 @@
 }
 
 .start .description-container p{ font-size: 13px;}
+
+@media (min-width: 700px) {
+
+    .start{height: 100vh; padding-top: 20svh;}
+    .start .start-container{height: 60%;}
+    .start .pflege-img{display: none;}
+}

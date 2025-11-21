@@ -19,29 +19,47 @@ const AppContextProvider = (props) => {
 
     const loadUserData = async (uid) => {
         try {
+            console.log("🔹 Iniciando loadUserData para UID:", uid);
             const userRef = doc(db, 'users', uid);
             const userSnap = await getDoc(userRef);
+
+            // ⚠️ BLOCo DE VERIFICAÇÃO ALTERADO AQUI!
+            if (!userSnap.exists()) {
+                console.warn("⚠️ Usuário não encontrado no Firestore:", uid);
+                // 1. Mostrar Mensagem de Erro
+                toast.error("Usuário não encontrado. Faça login novamente.");
+                // 2. Redirecionar para a página de Login
+                navigate('/'); 
+                return; // ⬅️ IMPORTANTE: Sair da função para não executar o restante
+            }
+            // FIM DA ALTERAÇÃO
+
             const userData = userSnap.data();
+            console.log("✅ userData carregado:", userData);
+
             setUserData(userData);
+
             if (userData.name) {
                 navigate('/chat');
             } else {
-                navigate('/profileupdate')
+                navigate('/profileupdate');
             }
-            await updateDoc(userRef, {
-                lastSeen: Date.now()
-            })
+
+            await updateDoc(userRef, { lastSeen: Date.now() });
+
             setInterval(async () => {
-                if (auth.chatUser) {
-                    await updateDoc(userRef, {
-                        lastSeen: Date.now()
-                    })
+                if (auth.currentUser) {
+                    await updateDoc(userRef, { lastSeen: Date.now() });
                 }
             }, 60000);
         } catch (error) {
-
+            console.error("❌ Erro em loadUserData:", error);
+            // Opcional: Tratar erros genéricos de leitura/conexão
+            toast.error("Ocorreu um erro ao carregar seus dados.");
+            navigate('/');
         }
-    }
+    };
+
 
     const deleteChat = async (rId, messageId) => {
     if (!userData || !rId || !messageId) return;

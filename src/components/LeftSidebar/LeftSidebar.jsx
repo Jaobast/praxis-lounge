@@ -9,15 +9,20 @@ import { AppContext } from "../../context/AppContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import useIsMobile from "../../context/useIsMobile";
-import ChatBox from "../ChatBox/ChatBox";
+// import ChatBox from "../ChatBox/ChatBox"; // Não usado aqui
 import ToolBar from "../ToolBar/ToolBar";
 
 const LeftSidebar = () => {
 
     const navigate = useNavigate();
 
-    const { userData, chatData, chatUser, setChatUser, messagesId, setMessagesId } = useContext(AppContext);
-    const [user, setUser] = useState(null);
+    // Removido 'chatUser', 'setChatUser' pois não são usados diretamente aqui no escopo, mas mantido por estar no original
+    const { userData, chatData, setChatUser, messagesId, setMessagesId } = useContext(AppContext);
+    
+    // ATUALIZAÇÃO: Mudança de 'user' para 'foundUsers' (array)
+    // const [user, setUser] = useState(null); // REMOVER
+    const [foundUsers, setFoundUsers] = useState([]); // NOVO ESTADO PARA MÚLTIPLOS USUÁRIOS
+    
     const [showSearch, setShowSearch] = useState(false);
     const isMobile = useIsMobile(700);
 
@@ -36,28 +41,26 @@ const inputHandler = async (e) => {
             const querySnap = await getDocs(q);
 
             if (!querySnap.empty) {
-                // procura o primeiro usuário diferente do usuário logado
-                const foundUser = querySnap.docs
-                    .map(doc => doc.data())
-                    .find(u => u.id !== userData.id);
 
-                if (foundUser) {
-                    // evita duplicar chat
-                    const userExist = chatData.some(u => u.rId === foundUser.id);
-                    if (!userExist) {
-                        setUser(foundUser);
-                    } else {
-                        setUser(null);
-                    }
-                } else {
-                    setUser(null);
-                }
+                // Mapeia todos os documentos para objetos de dados
+                const allUsers = querySnap.docs.map(doc => doc.data());
+                
+                // Filtra para remover o próprio usuário e aqueles que já estão na lista de chats
+                const newFoundUsers = allUsers.filter(u => 
+                    u.id !== userData.id && !chatData.some(chat => chat.rId === u.id)
+                );
+
+                // ATUALIZAÇÃO: Armazena a lista inteira
+                setFoundUsers(newFoundUsers);
+                
             } else {
-                setUser(null);
+                // ATUALIZAÇÃO: Limpa a lista se nada for encontrado
+                setFoundUsers([]);
             }
         } else {
             setShowSearch(false);
-            setUser(null);
+            // ATUALIZAÇÃO: Limpa a lista quando o input está vazio
+            setFoundUsers([]);
         }
     } catch (error) {
         console.error("Erro na busca:", error);
@@ -65,7 +68,8 @@ const inputHandler = async (e) => {
 };
 
 
-    const addChat = async () => {
+    // ATUALIZAÇÃO: Recebe o usuário como argumento
+    const addChat = async (userToAdd) => {
         const messagesRef = collection(db, "messages");
         const chatsRef = collection(db, "chats");
         try {
@@ -74,7 +78,8 @@ const inputHandler = async (e) => {
                 createAt: serverTimestamp(),
                 messagesRef: []
             })
-            await updateDoc(doc(chatsRef, user.id), {
+            // Usa userToAdd.id
+            await updateDoc(doc(chatsRef, userToAdd.id), {
                 chatsData: arrayUnion({
                     messageId: newMessageRef.id,
                     lastMessage: "",
@@ -83,21 +88,22 @@ const inputHandler = async (e) => {
                     messageSeen: true
                 })
             })
+            // Usa userToAdd.id
             await updateDoc(doc(chatsRef, userData.id), {
                 chatsData: arrayUnion({
                     messageId: newMessageRef.id,
                     lastMessage: "",
-                    rId: user.id,
+                    rId: userToAdd.id,
                     updateAt: Date.now(),
                     messageSeen: true
                 })
             })
             document.getElementById("input-search").value = "";
             setShowSearch(false);
-            setUser(null);
+            // ATUALIZAÇÃO: Limpa a lista de usuários encontrados
+            setFoundUsers([]);
         } catch (error) {
             toast.error(error.message);
-
         }
     }
 
@@ -134,7 +140,6 @@ const inputHandler = async (e) => {
     };
 
 
-
     return (
         <div className="ls">
             <div className="ls-container">
@@ -153,11 +158,16 @@ const inputHandler = async (e) => {
                 </div>
 
                 <div className="ls-list">
-                    {showSearch && user
-                        ? <div onClick={addChat} className="friends add-user">
-                            <img src={user.avatar} alt="" />
-                            <p>{user.name}</p>
-                        </div>
+                    {/* ATUALIZAÇÃO: Itera sobre a lista de usuários encontrados (foundUsers) */}
+                    {showSearch && foundUsers.length > 0
+                        ? foundUsers.map((userFound) => (
+                            <div onClick={() => addChat(userFound)} key={userFound.id} className="friends add-user">
+                                <img src={userFound.avatar} alt="" />
+                                <p>{userFound.name}</p>
+                            </div>
+                        ))
+                        : showSearch && foundUsers.length === 0
+                        ? <p style={{ textAlign: 'center', padding: '10px' }}>Nenhum perfil encontrado.</p>
                         : chatData.map((item, index) => (
                             <div onClick={() => { setChat(item) }} key={index}
                                 className={`friends ${item.messageSeen || item.messageId === messagesId ? "" : "border"}`}>

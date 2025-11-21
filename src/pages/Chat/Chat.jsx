@@ -12,6 +12,8 @@ const Chat = () => {
     const [loading, setLoading] = useState(true);
     const isMobile = useIsMobile(700);
 
+    console.log("Chat Data:", chatData, "User Data:", userData);
+
     useEffect(() => {
         if (chatData && userData) {
             setLoading(false);
